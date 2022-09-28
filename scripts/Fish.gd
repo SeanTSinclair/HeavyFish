@@ -14,6 +14,7 @@ onready var swim_gravity : float = ((-2.0 * swim_height) / (time_to_reach_peak *
 onready var fall_gravity : float = ((-2.0 * swim_height) / (time_to_reach_peak * time_to_reach_peak)) * -1.0
 onready var screen_height = get_viewport().size.y
 onready var sprite = $AnimatedSprite
+onready var sfx = $AudioStreamPlayer2D
 
 var velocity : Vector2 = Vector2.ZERO
 var is_dead : bool = false
@@ -32,7 +33,7 @@ func _physics_process(delta):
 	
 	if get_slide_count() > 0:
 		die()
-	
+		
 	position.y = clamp(position.y, 0, screen_height + 50)
 	apply_rotation()
 
@@ -41,6 +42,7 @@ func get_gravity() -> float:
 
 func swim() -> void: 
 	velocity.y = swim_velocity
+	sfx.play()
 
 func apply_rotation():
 	var rotation_degrees : float = clamp(velocity.y, -MAX_ROTATION_DEGREES, MAX_ROTATION_DEGREES)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/boing.mp3-2a11cb2246b064f93daf14f2ece67eef.mp3str"
+
+[deps]
+
+source_file="res://boing.mp3"
+dest_files=[ "res://.import/boing.mp3-2a11cb2246b064f93daf14f2ece67eef.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

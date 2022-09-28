@@ -4,6 +4,8 @@ signal score
 
 export var speed : float = 125.0
 
+onready var sfx = $AudioStreamPlayer2D
+
 func _ready():
 	move_to_random_vertical_position()
 
@@ -18,3 +20,4 @@ func move_to_random_vertical_position():
 	
 func _on_ScoreBox_body_entered(body):
 	emit_signal("score")
+	sfx.play()
